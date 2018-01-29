@@ -1,9 +1,9 @@
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+  <meta charset="utf-8">
+  <title>Агентство Недвижимости</title>
 
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/stylish-portfolio.css" rel="stylesheet">
@@ -19,7 +19,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.js"></script>
   <![endif]-->
 
-  <meta charset="utf-8">
+  
 </head>
 
 <body>
@@ -28,24 +28,27 @@
   <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+      <li>
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+      </li>
+      
       <li class="sidebar-brand">
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location="#top"">Агентство
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#top'">Агентство</button>
       </li>
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location="#top"">Главная
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#top'">Главная</button>
       </li>
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">О нас
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">О нас</button>
       </li>
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">Услуги
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">Услуги</button>
       </li>
       <!-- <li>
         <a href="#portfolio" onclick = $("#menu-close").click(); >Портфолио</a>
       </li> -->
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#contact'">Контакты
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#contact'">Контакты</button>
       </li>
     </ul>
   </nav>
@@ -143,37 +146,19 @@
   </section>
 
   <!-- Map -->
-  <section id="contact">
+  <section>
     <div id="map" class="map" style="width: 100%; height: 100%"></div>
 
 
     <div class="container">
     <div class="row text-center">
       <div class="col-lg-12">
-      <div style="font-size: 30; margin-top: 40; margin-bottom: 20;">Наш офис</div>
-      <img src="img/office place.jpg" width="600" class="img-rounded center-block">
+      <h3 style="font-size: 30; margin-top: 40; margin-bottom: 20;">Наш офис</h3>
+      <img src="img/office_place.jpg" width="600" class="img-rounded center-block" alt="Office place">
       </div>
     </div>
     </div>
   </section>
-
-
-  <script type="text/javascript">
-    ymaps.ready(init);
-    function init(){
-      var map = new ymaps.Map("map", {
-        center: [55.740684, 37.618174],
-        zoom: 15
-      });
-      map.behaviors.disable('scrollZoom');
-      placemark = new ymaps.Placemark([55.740684, 37.618174], {
-        hintContent: 'Твой Дом',
-        balloonContentHeader: 'Твой Дом',
-        balloonContentBody: 'Москва, Старомонетный переулок, 10'
-      });
-      map.geoObjects.add(placemark);
-    }
-  </script>
 
   <!-- Footer -->
   <footer>
@@ -191,10 +176,10 @@
           <br>
           <ul class="list-inline">
             <li>
-              <a href="https://vk.com/"><i class="fa fa-vk fa-fw fa-3x"></a></i>
+              <a href="https://vk.com/"><i class="fa fa-vk fa-fw fa-3x"></i></a>
             </li>
             <li>
-              <a href="http://example.com/"><i class="fa fa-link fa-fw fa-3x"></a></i>
+              <a href="http://example.com/"><i class="fa fa-link fa-fw fa-3x"></i></a>
             </li>
           </ul>
         </div>
@@ -204,6 +189,27 @@
 
 
   <!-- Custom Theme JavaScript -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+
+  <script>
+    ymaps.ready(init);
+    function init(){
+      var map = new ymaps.Map("map", {
+        center: [55.740684, 37.618174],
+        zoom: 15
+      });
+      map.behaviors.disable('scrollZoom');
+      placemark = new ymaps.Placemark([55.740684, 37.618174], {
+        hintContent: 'Твой Дом',
+        balloonContentHeader: 'Твой Дом',
+        balloonContentBody: 'Москва, Старомонетный переулок, 10'
+      });
+      map.geoObjects.add(placemark);
+    }
+  </script>
+  
   <script>
     // Closes the sidebar menu
     $("#menu-close").click(function(e) {
