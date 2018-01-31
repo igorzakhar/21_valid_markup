@@ -4,7 +4,7 @@
 
 # Демо сайт
 
-[сайт агенства недвижимости](https://igorzakhar.github.io/21_valid_markup/)
+[Демо версия сайта](https://igorzakhar.github.io/21_valid_markup/)
 
 # Цели проекта
 
